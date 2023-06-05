@@ -55,3 +55,31 @@ FROM Employees E
 LEFT JOIN Salaries S
 ON E.emp_no = S.emp_no
 ;
+
+SELECT first_name, last_name, hire_date
+FROM Employees
+WHERE hire_date LIKE '%1986'
+;
+
+SELECT DM.dept_no, D.dept_name, DM.emp_no, E.last_name, E.first_name
+FROM Dept_Manager DM
+LEFT JOIN Departments D
+ON DM.dept_no = D.dept_no
+LEFT JOIN Employees E
+ON DM.emp_no = E.emp_no
+;
+
+SELECT DE.dept_no, DE.emp_no, E.last_name, E.first_name, D.dept_name
+FROM Dept_Emp DE
+LEFT JOIN Employees E
+ON DE.emp_no = E. emp_no
+LEFT JOIN Departments D 
+ON DE.dept_no = D.dept_no
+;
+
+SELECT first_name, last_name, sex
+FROM Employees
+WHERE first_name = 'Hercules' AND last_name LIKE 'B%'
+;
+
+
